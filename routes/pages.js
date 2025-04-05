@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Page = require('../models/Page');
+const page = require('../models/page');
 
 // Listar páginas
 router.get('/', async (req, res) => {
@@ -16,7 +16,7 @@ router.get('/add', (req, res) => {
 // Salvar nova página
 router.post('/add', async (req, res) => {
   const { title, content } = req.body;
-  await Page.create({ title, content });
+  await page.create({ title, content });
   res.redirect('/');
 });
 
