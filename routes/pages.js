@@ -4,7 +4,7 @@ const page = require('../models/page');
 
 // Listar páginas
 router.get('/', async (req, res) => {
-  const pages = await Page.find().sort({ createdAt: -1 });
+  const pages = await page.find().sort({ createdAt: -1 });
   res.render('index', { pages });
 });
 
