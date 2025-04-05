@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title><%= dados.titulo %></title>
+  <title>CMS Simples</title>
 </head>
 <body>
-  <h1><%= dados.titulo %></h1>
-  <p><%= dados.descricao %></p>
-  <a href="/admin">Painel de edição</a>
+  <h1>Minhas Páginas</h1>
+  <a href="/add">Adicionar Página</a>
+  <ul>
+    <% pages.forEach(page => { %>
+      <li><strong><%= page.title %></strong>: <%= page.content %></li>
+    <% }) %>
+  </ul>
 </body>
 </html>
